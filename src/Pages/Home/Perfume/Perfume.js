@@ -14,7 +14,7 @@ const Perfume = ({perfume}) => {
     const navigate=useNavigate();
 
     const navigateToPerfumeDetail = id =>{
-        navigate(`/perfume/:${id}`);
+        navigate(`/perfume/${id}`);
 
     }
 
