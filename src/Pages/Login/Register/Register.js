@@ -7,14 +7,19 @@ const Register = () => {
             <h2>Register</h2>
             <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
+    
+    <Form.Control type="email" required placeholder="Enter email" />
     
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
+  
+    <Form.Control type="password" required placeholder="Password" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+  
+    <Form.Control type="password" required placeholder="Confirm Password" />
   </Form.Group>
 
   <Button variant="primary" type="submit">
