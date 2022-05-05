@@ -8,16 +8,10 @@ const Login = () => {
           <h2>Login</h2>
             <Form>
  
-    
     <Form.Control type="email" required placeholder="Enter email" />
     
-  
-
-  
- 
     <Form.Control type="password" required placeholder="Password" />
   
-
   <Button variant="primary" type="submit">
     Submit
   </Button>

@@ -19,24 +19,14 @@ const InventoryDetail = () => {
 
     },[perfumeQuantity]);
 
-    // const [quantityUpdate,setQuantityUpdate]=useState(0);
 
     const handleStockUpdateByOne = (event) =>{
         event.preventDefault();
-        // console.log("initial quantity # ", quantity, "perfume-Quantity #", perfume.quantity);
-        // const quantityNew=perfume.quantity-1;
-        // console.log("quantityNew # ", quantityNew);
-        // setQuantity(quantityNew); 
-        // console.log("after decreasing # " ,quantity);
+      
         const quantity=perfume.quantity -1;
-        // setQuantityUpdate(quantity);
-        // const name="ABC";
-
         const updatedQuantity={quantity};
-        // console.log(updatedQuantity);
+       
         const url=`http://localhost:5000/perfume/${perfumeId}`;
-
-        // console.log("from update #", url);
 
         fetch(url, {
             method:'PUT',
@@ -46,16 +36,37 @@ const InventoryDetail = () => {
             body: JSON.stringify(updatedQuantity)
         })
         .then(res => res.json())
-        .then(data =>{
-            // fetch(url)
-            // .then(res=>res.json())
-            // .then(data=>setPerfume(data))
-            setPerfumeQuantity(quantity);
-
-            //document.getElementById('stockQuantity').innerHTML=quantity;
+        .then(data =>{          
+            setPerfumeQuantity(quantity);            
             console.log('success',data);
-            alert('quantity updated successfully');
-            
+            alert('quantity updated successfully');            
+        })
+    }
+
+    const handleRestock = (event) =>{
+        event.preventDefault();
+        const newStockQuantity=event.target.newStockInput.value;
+        // console.log(newStockQuantity);
+        const quantity= parseInt(newStockQuantity)+parseInt(perfume.quantity);
+        // console.log(updatedNewStockQuantity);
+        const updatedQuantity={quantity};
+        console.log(updatedQuantity);
+
+        const url=`http://localhost:5000/perfume/${perfumeId}`;
+        console.log(url);
+
+        fetch(url, {
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+        .then(res => res.json())
+        .then(data =>{          
+            setPerfumeQuantity(quantity);            
+            console.log('success',data);
+            alert('quantity updated successfully');            
         })
     }
     
@@ -88,13 +99,17 @@ const InventoryDetail = () => {
                             <Form.Label id="stockQuantity" >{perfume.quantity}</Form.Label>
                         </Col>
                     </Row>
-                    
                 </Container>
-                 
-                    <Button  type="submit" >Delivered</Button>
-    
+                <Button  type="submit" >Delivered</Button>
             </Form>
 
+            <Form onSubmit={handleRestock}>
+                <Form.Control type="number" name="newStockInput" required placeholder="Enter new stock" />
+                
+                <Button variant="primary" type="submit">
+                Restock the item
+                </Button>
+            </Form>
         </div>
     );
 };
