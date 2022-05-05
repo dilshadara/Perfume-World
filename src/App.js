@@ -3,8 +3,10 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
+import AddInventory from './Pages/Inventory/AddInventory/AddInventory';
 // import Inventory from './Pages/Home/Inventory/Inventory';
 import InventoryDetail from './Pages/Inventory/InventoryDetail/InventoryDetail';
+import ManageInventory from './Pages/Inventory/ManageInventory/ManageInventory';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -24,6 +26,10 @@ function App() {
 
         <Route path="/perfume/:perfumeId" element={<InventoryDetail></InventoryDetail>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
+        <Route path="/manageInventory" element={<ManageInventory
+        ></ManageInventory>}></Route>
+        <Route path="/addInventory" element={<AddInventory
+        ></AddInventory>}></Route>
       </Routes>
       
       <Footer></Footer>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 // import { useForm } from "react-hook-form";
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
@@ -8,6 +8,11 @@ const InventoryDetail = () => {
     const [perfume,setPerfume]=useState({});
 
     const [perfumeQuantity,setPerfumeQuantity]=useState(0);
+
+    const navigate=useNavigate();
+    const navigateManageInventory = () =>{
+        navigate('/manageInventory');
+    }
     
 
     useEffect( ()=>{
@@ -110,6 +115,8 @@ const InventoryDetail = () => {
                 Restock the item
                 </Button>
             </Form>
+
+            <Link to='/manageInventory' onClick={navigateManageInventory}>Manage Inventories</Link>
         </div>
     );
 };
