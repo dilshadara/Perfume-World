@@ -67,8 +67,8 @@ const Register = () => {
               </Button>
             </Form>
             <p className='text-danger mt-1'>{err} {errorElement}</p>
-     <p className='mt-2'>Already have an account? <Link to="/login" className='text-decoration-none fw-bold text-color' onClick={navigateRegister}>Please Login</Link></p>
-      <SocialLogin></SocialLogin>
+            <p className='mt-2'>Already have an account? <Link to="/login" className='text-decoration-none fw-bold text-color' onClick={navigateRegister}>Please Login</Link></p>
+            <SocialLogin></SocialLogin>
           </div>
     );
 };
