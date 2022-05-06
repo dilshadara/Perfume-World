@@ -1,6 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -17,7 +17,7 @@ const Login = () => {
   </Button>
 </Form>
 
-{/* <Link to="/register"></Link> */}
+  <Link to="/register">Register</Link>
         </div>
     );
 };
