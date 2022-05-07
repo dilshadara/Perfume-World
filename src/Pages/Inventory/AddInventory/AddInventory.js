@@ -1,7 +1,10 @@
 import React from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../../firebase.init";
 
 const AddInventory = () => {
+    const [user] = useAuthState(auth);
 
     const handleNewStockAddition = (event) =>{
             event.preventDefault();
@@ -13,8 +16,9 @@ const AddInventory = () => {
             const image = event.target.image.value;
             const brand=event.target.brand.value;
             const size="100ml";
+            const email=user.email;
 
-            const perfume={name,description,price,quantity,supplier,image,brand,size};
+            const perfume={name,description,price,quantity,supplier,image,brand,size,email};
 
             //send data to server
             fetch('http://localhost:5000/perfume',{

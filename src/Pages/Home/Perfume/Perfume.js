@@ -18,6 +18,8 @@ const Perfume = ({perfume}) => {
 
     }
 
+    
+
     return (
         <div>
            <Card style={{ width: '18rem' }}>
@@ -28,6 +30,7 @@ const Perfume = ({perfume}) => {
      {shortDescription}
     </Card.Text>
     <Button onClick={() => navigateToPerfumeDetail(_id)} variant="primary">Stock Update</Button>
+   
   </Card.Body>
 </Card> 
         </div>
