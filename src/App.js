@@ -9,6 +9,7 @@ import InventoryDetail from './Pages/Inventory/InventoryDetail/InventoryDetail';
 import ManageInventory from './Pages/Inventory/ManageInventory/ManageInventory';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
@@ -24,7 +25,11 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
 
-        <Route path="/perfume/:perfumeId" element={<InventoryDetail></InventoryDetail>}></Route>
+        <Route path="/perfume/:perfumeId" element={
+          <RequireAuth>
+              <InventoryDetail></InventoryDetail>
+          </RequireAuth>
+        }></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
         <Route path="/manageInventory" element={<ManageInventory
         ></ManageInventory>}></Route>
