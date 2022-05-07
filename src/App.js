@@ -39,8 +39,11 @@ function App() {
         }></Route>
        
         <Route path="*" element={<NotFound></NotFound>}></Route>
-        <Route path="/manageInventory" element={<ManageInventory
-        ></ManageInventory>}></Route>
+        <Route path="/manageInventory" element={
+        <RequireAuth> 
+          <ManageInventory></ManageInventory>
+          </RequireAuth>
+        }></Route>
         <Route path="/addInventory" element={<AddInventory
         ></AddInventory>}></Route>
       </Routes>
