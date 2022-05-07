@@ -40,7 +40,7 @@ const ManageInventory = () => {
 
 
     return (
-        <div class="w-75 mx-auto">
+        <div className="w-75 mx-auto">
               <button style={{marginBottom:'15px'}} onClick={navigateAddInventory}>Add Inventory</button> 
             <Table  striped bordered hover >
   <thead>

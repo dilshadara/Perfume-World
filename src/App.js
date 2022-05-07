@@ -10,9 +10,11 @@ import ManageInventory from './Pages/Inventory/ManageInventory/ManageInventory';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import MyItems from './Pages/MyInventory/MyItems/MyItems';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
+
 
 function App() {
   return (
@@ -28,6 +30,11 @@ function App() {
         <Route path="/perfume/:perfumeId" element={
           <RequireAuth>
               <InventoryDetail></InventoryDetail>
+          </RequireAuth>
+        }></Route>
+        <Route path="/myItems" element={
+          <RequireAuth>
+             <MyItems></MyItems>
           </RequireAuth>
         }></Route>
        

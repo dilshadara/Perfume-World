@@ -32,10 +32,6 @@ const AddInventory = () => {
             .then(data =>{
                 console.log('success',data)
             })
-
-
-
-
     }
 
     return (
@@ -88,7 +84,7 @@ const AddInventory = () => {
                         </Col>
                     </Row>
                 </Container>
-                <Button class="mt-2"  type="submit" >Add New Perfume</Button>
+                <Button className="mt-2"  type="submit" >Add New Perfume</Button>
             </Form>
 
         </div>

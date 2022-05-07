@@ -7,8 +7,6 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../../Shared/Loading/Loading';
 
 const Login = () => {
-
-  
   const [err, setErr]=useState('');
   const emailRef = useRef('');
   let errorElement;
@@ -49,6 +47,8 @@ const Login = () => {
     event.preventDefault();
     const email=event.target.email.value;
     const password = event.target.password.value;
+
+    // console.log(email,password);
    
     if(password.length<6){
       setErr('Password should be at least 6 characters long.');
@@ -61,7 +61,7 @@ const Login = () => {
   const resetPassword = async (event) => {
    
     const email = emailRef.current.value;
-    // console.log(email);
+  
     if(email){
       await sendPasswordResetEmail(email);
       // toast('Sent email');
@@ -79,7 +79,7 @@ const Login = () => {
             <Form onSubmit={handleLogin}>
               <Form.Control type="email" ref={emailRef} name="email" required placeholder="Enter email" />
 
-              <Form.Control type="password" required name="password" placeholder="Password" />
+              <Form.Control type="password" required name="password" placeholder="Enter Password" />
               <Button variant="primary" type="submit">
                 Submit
               </Button>

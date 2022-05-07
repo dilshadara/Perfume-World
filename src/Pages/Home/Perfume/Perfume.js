@@ -4,7 +4,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Perfume = ({perfume}) => {
-    console.log("from perfume page", perfume);
+    // console.log("from perfume page", perfume);
     const {_id,name,image} = perfume;
 
     //    brand,price,quantity,supplier,size,

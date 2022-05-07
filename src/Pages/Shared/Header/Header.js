@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 
+
 const Header = () => {
 
   const [user] = useAuthState(auth);
@@ -29,6 +30,7 @@ const Header = () => {
           <Nav>
               {/* <Nav.Link as={Link} to="about">About</Nav.Link> */}
               <Nav.Link as={Link} to="blogs">Blog</Nav.Link>
+              <Nav.Link as={Link} to="myItems">My Items</Nav.Link>
               {
                 user?
                   
