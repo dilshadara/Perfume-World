@@ -18,8 +18,6 @@ const Perfume = ({perfume}) => {
 
     }
 
-    
-
     return (
         <div>
            <Card style={{ width: '18rem', border:'0px', minHeight: '630px' }}>
