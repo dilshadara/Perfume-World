@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// import { Link, useNavigate } from 'react-router-dom';
 import NewArrivalItem from '../NewArrivalItem/NewArrivalItem';
 
 const NewArrival = () => {
 
     const [perfumes,setPerfumes]=useState([]);
 
-    const navigate= useNavigate();
-    const navigateManageInventory = () =>{
-        navigate('/manageInventory');
-    }
+    // const navigate= useNavigate();
+    // const navigateManageInventory = () =>{
+    //     navigate('/manageInventory');
+    // }
 
 
     useEffect(() =>{

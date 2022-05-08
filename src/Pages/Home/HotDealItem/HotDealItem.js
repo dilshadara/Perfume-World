@@ -19,12 +19,12 @@ const HotDealItem = ({perfume}) => {
 
     return (
        <div>
-           <Card style={{ width: '18rem', border:'0px', minHeight: '640px' }}>
+           <Card style={{ width: '18rem', border:'0px', minHeight: '590px' }}>
   <Card.Img variant="top" src={image} />
   <Card.Body style={{ display: 'flex', flexDirection: 'column'}}>
     <Card.Title>{name}</Card.Title>
     <Card.Text>
-     <small>{shortDescription}</small>
+     {/* <small>{shortDescription}</small> */}
      <p className='newHotPrice'><b>Price: ${price}</b></p>
      <p style={{color:'red'}}><b>New Price: ${price/2}</b></p>
     </Card.Text>
