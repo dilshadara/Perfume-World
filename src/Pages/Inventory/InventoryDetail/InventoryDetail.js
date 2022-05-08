@@ -78,11 +78,11 @@ const InventoryDetail = () => {
     return (
         <div className='container w-100 mx-auto '>
              <h2 style={{textAlign:'center'}}>{perfume.name}</h2>
-             <div className='d-flex flex-row'>
+             <div className='d-flex flex-row '>
              <div className='container w-50 mx-auto '>
-                <img className='mt-5' src={perfume.image} alt=""></img>
+                <img className='mt-5 ' src={perfume.image} alt=""></img>
              </div>
-            <div className='container w-50 mx-auto ' >
+            <div className='container w-50 mx-auto' >
                 <Form onSubmit={handleStockUpdateByOne}>
                     <Container style={{textAlign:'left'}}>
                         <Row>
