@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from 'react';
-// import { Link, useNavigate } from 'react-router-dom';
-import Perfume from '../Perfume/Perfume';
-import './Inventory.css';
+import { Link, useNavigate } from 'react-router-dom';
+import NewArrivalItem from '../NewArrivalItem/NewArrivalItem';
 
+const NewArrival = () => {
 
-const Inventory = () => {
     const [perfumes,setPerfumes]=useState([]);
 
-    // const navigate= useNavigate();
-    // const navigateManageInventory = () =>{
-    //     navigate('/manageInventory');
-    // }
+    const navigate= useNavigate();
+    const navigateManageInventory = () =>{
+        navigate('/manageInventory');
+    }
 
 
     useEffect(() =>{
@@ -19,20 +18,19 @@ const Inventory = () => {
         .then(data=>setPerfumes(data))
     } ,[]);
 
-    let perfumeTop6=perfumes.slice(0,6);
-
+    let perfumeTop3=perfumes.slice(0,3);
 
     return (
         <div id="perfumes" >
-            <h1 className='mb-5 mt-5'>All Products</h1>
+            <h1 className='mb-5'>New Arrivals</h1>
             <div className='d-flex justify-content-center w-100'>
             {/* <p>total count : {perfumes.length}</p> */}
             <div className='inventory-container w-75'>
             {
-                perfumeTop6.map(perfume => <Perfume
+                perfumeTop3.map(perfume => <NewArrivalItem
                     key={perfume._id} 
                     perfume={perfume}
-                    ></Perfume>)
+                    ></NewArrivalItem>)
 
                
            }
@@ -44,4 +42,4 @@ const Inventory = () => {
     );
 };
 
-export default Inventory;
+export default NewArrival;

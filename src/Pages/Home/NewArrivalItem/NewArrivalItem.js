@@ -1,11 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {Button,Card} from 'react-bootstrap';
-import { Navigate, useNavigate } from 'react-router-dom';
 
+const NewArrivalItem = ({perfume}) => {
 
-const Perfume = ({perfume}) => {
-    
-    const {_id,name,image,price,quantity,supplier} = perfume;
+    const {_id,name,image,price} = perfume;
 
     //    ,brand,price,quantity,supplier,size,
    
@@ -20,7 +19,7 @@ const Perfume = ({perfume}) => {
 
     return (
         <div>
-           <Card style={{ width: '18rem', border:'0px', minHeight: '630px' }}>
+           <Card style={{ width: '18rem', border:'0px', minHeight: '600px' }}>
   <Card.Img variant="top" src={image} />
   <Card.Body style={{ display: 'flex', flexDirection: 'column'}}>
     <Card.Title>{name}</Card.Title>
@@ -28,12 +27,9 @@ const Perfume = ({perfume}) => {
      <small>{shortDescription}</small>
      <br></br>
      <b>Price: ${price}</b>
-     <br></br>
-     Quantity: {quantity}
-     <br></br>
-     Supplier: {supplier}
+     
     </Card.Text>
-    <Button onClick={() => navigateToPerfumeDetail(_id)} variant="primary" style={{marginTop: 'auto'}}>Stock Update</Button>
+    <Button onClick={() => navigateToPerfumeDetail(_id)} variant="primary" style={{marginTop: 'auto'}}>See Details</Button>
    
   </Card.Body>
 </Card> 
@@ -41,4 +37,4 @@ const Perfume = ({perfume}) => {
     );
 };
 
-export default Perfume;
+export default NewArrivalItem;
