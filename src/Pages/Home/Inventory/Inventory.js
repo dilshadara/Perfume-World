@@ -19,6 +19,7 @@ const Inventory = () => {
         .then(data=>setPerfumes(data))
     } ,[]);
 
+    let perfumeTop6=perfumes.slice(0,6);
 
 
     return (
@@ -28,7 +29,7 @@ const Inventory = () => {
             {/* <p>total count : {perfumes.length}</p> */}
             <div className='inventory-container w-75'>
             {
-                perfumes.map(perfume => <Perfume
+                perfumeTop6.map(perfume => <Perfume
                     key={perfume._id} 
                     perfume={perfume}
                     ></Perfume>)
