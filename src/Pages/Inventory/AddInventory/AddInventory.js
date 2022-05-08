@@ -21,7 +21,7 @@ const AddInventory = () => {
             const perfume={name,description,price,quantity,supplier,image,brand,size,email};
 
             //send data to server
-            fetch('http://localhost:5000/perfume',{
+            fetch('https://thawing-lake-47486.herokuapp.com/perfume',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',

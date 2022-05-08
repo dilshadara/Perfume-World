@@ -18,7 +18,7 @@ const MyItems = () => {
         // setEmail(user.email);
         // console.log(email);
         const email=user.email;
-        const url=`http://localhost:5000/myItems?email=${email}`;
+        const url=`https://thawing-lake-47486.herokuapp.com/myItems?email=${email}`;
         console.log(url);
         fetch(url)
         .then(res=>res.json())
@@ -29,7 +29,7 @@ const MyItems = () => {
         const consentDelete = window.confirm('Do you really want to delete this record?');
         if(consentDelete){
             console.log('deleting with id', id);
-            const url=`http://localhost:5000/perfume/${id}`;
+            const url=`https://thawing-lake-47486.herokuapp.com/perfume/${id}`;
 
             fetch(url, {
                 method:'DELETE',
@@ -48,7 +48,8 @@ const MyItems = () => {
 
     return (
         <div className="w-75 mx-auto">
-            <p>{perfumes.count}</p>
+
+          <h2>My Items</h2>
         <button style={{marginBottom:'15px'}} onClick={navigateAddInventory}>Add Inventory</button> 
       <Table  striped bordered hover >
 <thead>

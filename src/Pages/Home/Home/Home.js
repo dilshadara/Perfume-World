@@ -3,7 +3,7 @@ import Inventory from '../Inventory/Inventory';
 
 const Home = () => {
     return (
-        <div>
+        <div >
           <Inventory></Inventory>
         </div>
     );

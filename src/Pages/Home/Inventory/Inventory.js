@@ -14,7 +14,7 @@ const Inventory = () => {
 
 
     useEffect(() =>{
-        fetch('http://localhost:5000/perfume')
+        fetch('https://thawing-lake-47486.herokuapp.com/perfume')
         .then(res=>res.json())
         .then(data=>setPerfumes(data))
     } ,[]);

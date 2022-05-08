@@ -7,7 +7,7 @@ const Footer = () => {
     let year = date.getFullYear();
 
     return (
-        <div className='footer w-100'>
+        <div className='footer w-100 mt-5'>
             <div>
                 <h2>NO#1 wholesaler of World's famous brand perfumes
                     

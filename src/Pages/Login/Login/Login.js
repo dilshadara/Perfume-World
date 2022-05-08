@@ -74,18 +74,18 @@ const Login = () => {
   }
 
     return (
-        <div>
-          <h2>Login</h2>
+        <div className='container w-25 mx-auto border rounded mt-3 mb-5  login' >
+          <h2 className='text-center pt-2 text-color'>Login</h2>
             <Form onSubmit={handleLogin}>
-              <Form.Control type="email" ref={emailRef} name="email" required placeholder="Enter email" />
+              <Form.Control type="email" ref={emailRef} name="email" required placeholder="Enter email" className='mb-3'/>
 
-              <Form.Control type="password" required name="password" placeholder="Enter Password" />
-              <Button variant="primary" type="submit">
-                Submit
+              <Form.Control type="password" required name="password" placeholder="Enter Password" className='mb-3'/>
+              <Button variant="primary" type="submit" className='w-75'>
+                Log In
               </Button>
             </Form>
             <p className='text-danger mt-1'>{err} {errorElement}</p>
-            <p className='mt-2'>New to Happy Clicking? <Link to="/register" className='text-decoration-none fw-bold text-color' onClick={navigateRegister}>Please Register</Link></p>
+            <p className='mt-2'>New to Perfume World? <Link to="/register" className='text-decoration-none fw-bold text-color' onClick={navigateRegister}>Please Register</Link></p>
             <p>Forgot password?<Button className='bg-color ms-2' onClick={resetPassword}>Reset Password</Button></p>
               <SocialLogin></SocialLogin>
         </div>

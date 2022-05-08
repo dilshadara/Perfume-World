@@ -53,8 +53,8 @@ const Register = () => {
 
 
     return (
-        <div>
-            <h2>Register</h2>
+        <div className='container w-25 mx-auto border rounded mt-3 mb-5  login'>
+            <h2 className='text-center pt-2 text-color'>Register</h2>
             <Form onSubmit={handleRegister}>
             <Form.Control type="email" name="email" placeholder="Enter email" required className='mb-3'/>
             
@@ -62,8 +62,8 @@ const Register = () => {
             
             
             <Form.Control type="password" name="confirmPassword"  placeholder="Confirm Password" className='mb-3'/>
-              <Button variant="primary" type="submit">
-                Submit
+              <Button variant="primary" type="submit" className='w-75'>
+                Register
               </Button>
             </Form>
             <p className='text-danger mt-1'>{err} {errorElement}</p>

@@ -12,7 +12,7 @@ const ManageInventory = () => {
     }
 
     useEffect(() =>{
-        fetch('http://localhost:5000/perfume')
+        fetch('https://thawing-lake-47486.herokuapp.com/perfume')
         .then(res=>res.json())
         .then(data=>setPerfumes(data))
     } ,[]);
@@ -21,7 +21,7 @@ const ManageInventory = () => {
         const consentDelete = window.confirm('Do you really want to delete this record?');
         if(consentDelete){
             console.log('deleting with id', id);
-            const url=`http://localhost:5000/perfume/${id}`;
+            const url=`https://thawing-lake-47486.herokuapp.com/perfume/${id}`;
 
             fetch(url, {
                 method:'DELETE',

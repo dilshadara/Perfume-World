@@ -16,7 +16,7 @@ const InventoryDetail = () => {
     
 
     useEffect( ()=>{
-        const url=`http://localhost:5000/perfume/${perfumeId}`;
+        const url=`https://thawing-lake-47486.herokuapp.com/perfume/${perfumeId}`;
         // console.log(url);
         fetch(url)
         .then(res=>res.json())
@@ -31,7 +31,7 @@ const InventoryDetail = () => {
         const quantity=perfume.quantity -1;
         const updatedQuantity={quantity};
        
-        const url=`http://localhost:5000/perfume/${perfumeId}`;
+        const url=`https://thawing-lake-47486.herokuapp.com/perfume/${perfumeId}`;
 
         fetch(url, {
             method:'PUT',
@@ -57,7 +57,7 @@ const InventoryDetail = () => {
         const updatedQuantity={quantity};
         console.log(updatedQuantity);
 
-        const url=`http://localhost:5000/perfume/${perfumeId}`;
+        const url=`https://thawing-lake-47486.herokuapp.com/perfume/${perfumeId}`;
         console.log(url);
 
         fetch(url, {
