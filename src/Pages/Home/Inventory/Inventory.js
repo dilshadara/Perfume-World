@@ -22,10 +22,11 @@ const Inventory = () => {
 
 
     return (
-        <div >
-            <h1>Available Perfume</h1>
-            <p>total count : {perfumes.length}</p>
-            <div className='inventory-container w-100'>
+        <div id="perfumes" >
+            <h1 className='mb-5'>All Products</h1>
+            <div className='d-flex justify-content-center w-100'>
+            {/* <p>total count : {perfumes.length}</p> */}
+            <div className='inventory-container w-75'>
             {
                 perfumes.map(perfume => <Perfume
                     key={perfume._id} 
@@ -34,6 +35,7 @@ const Inventory = () => {
 
                
            }
+           </div>
            </div>
           <Link to="/manageInventory" onClick={navigateManageInventory}>Manage Inventories</Link>
 

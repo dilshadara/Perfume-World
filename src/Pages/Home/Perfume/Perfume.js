@@ -5,9 +5,9 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Perfume = ({perfume}) => {
     // console.log("from perfume page", perfume);
-    const {_id,name,image} = perfume;
+    const {_id,name,image,price,quantity,supplier} = perfume;
 
-    //    brand,price,quantity,supplier,size,
+    //    ,brand,price,quantity,supplier,size,
     // style={{ width: '18rem' }}
     const  {"short-description" : shortDescription} = perfume;
 
@@ -22,14 +22,20 @@ const Perfume = ({perfume}) => {
 
     return (
         <div>
-           <Card style={{ width: '18rem' }}>
+           <Card style={{ width: '18rem', border:'0px', minHeight: '630px' }}>
   <Card.Img variant="top" src={image} />
-  <Card.Body>
+  <Card.Body style={{ display: 'flex', flexDirection: 'column'}}>
     <Card.Title>{name}</Card.Title>
     <Card.Text>
-     {shortDescription}
+     <small>{shortDescription}</small>
+     <br></br>
+     <b>Price: ${price}</b>
+     <br></br>
+     Quantity: {quantity}
+     <br></br>
+     Supplier: {supplier}
     </Card.Text>
-    <Button onClick={() => navigateToPerfumeDetail(_id)} variant="primary">Stock Update</Button>
+    <Button onClick={() => navigateToPerfumeDetail(_id)} variant="primary" style={{marginTop: 'auto'}}>Stock Update</Button>
    
   </Card.Body>
 </Card> 

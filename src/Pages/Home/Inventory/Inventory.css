@@ -6,3 +6,21 @@
     margin-bottom: 150px;
 
 }
+
+
+
+/* make services responsive */
+/* for mobile */
+@media only screen and (max-width:576px) {
+    .inventory-container {
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+}
+
+/* for tablet */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .inventory-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

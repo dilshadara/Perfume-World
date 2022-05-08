@@ -47,19 +47,20 @@ const MyItems = () => {
     }
 
     return (
-        <div className="w-75 mx-auto">
+        <div className="w-75 mx-auto table-responsive-sm table-responsive-md">
 
           <h2>My Items</h2>
         <button style={{marginBottom:'15px'}} onClick={navigateAddInventory}>Add Inventory</button> 
-      <Table  striped bordered hover >
+      <Table table striped bordered hover >
 <thead>
-<tr>
+<tr class="table-info">
 
 <th>Name</th>
 <th>Brand</th>
 <th>Price</th>
 <th>Quantity</th>
 <th>Supplier</th>
+<th>Action</th>
 </tr>
 </thead>
 <tbody>
