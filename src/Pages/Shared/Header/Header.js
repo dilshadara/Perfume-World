@@ -24,7 +24,8 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             {/* <Nav.Link as={Link} to="home">Home</Nav.Link> */}
-            {/* <Nav.Link href="home#services">Services</Nav.Link> */}
+            {/* <Nav.Link href="home#hotDeals">Hot Deals</Nav.Link>
+            <Nav.Link href="home#newArrivals">New Arrivals</Nav.Link> */}
         
           </Nav>
           <Nav>

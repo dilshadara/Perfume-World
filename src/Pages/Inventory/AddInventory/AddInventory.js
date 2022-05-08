@@ -30,7 +30,8 @@ const AddInventory = () => {
             })
             .then(res => res.json())
             .then(data =>{
-                console.log('success',data)
+                // console.log('success',data);
+                alert('New perfume added successfully');  
             })
     }
 

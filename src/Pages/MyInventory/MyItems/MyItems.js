@@ -8,7 +8,7 @@ const MyItems = () => {
     const [user] = useAuthState(auth);
     const [perfumes,setPerfumes]=useState([]);
     // const [email,setEmail]=useState('');
-
+    let showTable= false;
     const navigate = useNavigate();
     const navigateAddInventory = () =>{
         navigate('/addInventory');
@@ -48,33 +48,46 @@ const MyItems = () => {
 
     return (
         <div className="w-75 mx-auto table-responsive-sm table-responsive-md">
-
-          <h2>My Items</h2>
+          <h2 className='mb-3'>My Items</h2>
         <button style={{marginBottom:'15px'}} onClick={navigateAddInventory}>Add Inventory</button> 
-      <Table table striped bordered hover >
-<thead>
-<tr class="table-info">
-
-<th>Name</th>
-<th>Brand</th>
-<th>Price</th>
-<th>Quantity</th>
-<th>Supplier</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-  {
-      perfumes.map(perfume => <tr key={perfume._id}>
-              <td style={{textAlign:'left'}}>{perfume.name}</td>
-              <td style={{textAlign:'center'}}>{perfume.brand}</td>
-              <td>{perfume.price}</td>
-              <td>{perfume.quantity}</td>
-              <td>{perfume.supplier}</td>
-              <td><Button onClick={() => handlePerfumeDelete(perfume._id)}>X</Button></td>
-          </tr>)}
-</tbody>
-</Table>
+        {
+         
+            (perfumes.length===0) && <p>No data found</p>
+        }
+        {
+            (perfumes.length===0) || 
+            <Table table striped bordered hover >
+               <thead>
+               <tr className="table-info">
+   
+               <th>Name</th>
+               <th>Brand</th>
+               <th>Price</th>
+               <th>Quantity</th>
+               <th>Supplier</th>
+               <th>Action</th>
+               </tr>
+               </thead>
+               <tbody>
+               {
+                   perfumes.map(perfume => <tr key={perfume._id}>
+                           <td style={{textAlign:'left'}}>{perfume.name}</td>
+                           <td style={{textAlign:'center'}}>{perfume.brand}</td>
+                           <td>{perfume.price}</td>
+                           <td>{perfume.quantity}</td>
+                           <td>{perfume.supplier}</td>
+                           <td><Button onClick={() => handlePerfumeDelete(perfume._id)}>X</Button></td>
+                       </tr>)}
+               </tbody>
+           </Table>
+        }
+            
+               
+           
+          
+         
+       
+        
   </div>
     );
 };

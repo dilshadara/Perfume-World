@@ -21,7 +21,7 @@ const NewArrival = () => {
     let perfumeTop3=perfumes.slice(0,3);
 
     return (
-        <div id="perfumes" >
+        <div id="newArrivals" >
             <h1 className='mb-5'>New Arrivals</h1>
             <div className='d-flex justify-content-center w-100'>
             {/* <p>total count : {perfumes.length}</p> */}

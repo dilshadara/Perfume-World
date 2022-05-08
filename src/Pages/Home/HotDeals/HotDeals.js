@@ -20,7 +20,7 @@ const HotDeals = () => {
     let perfumeTop3=perfumes.slice(0,3);
 
     return (
-        <div id="perfumes" >
+        <div id="hotDeals" >
             <h1 className='mb-5'>Hot Deals</h1>
             <div className='d-flex justify-content-center w-100'>
             {/* <p>total count : {perfumes.length}</p> */}
