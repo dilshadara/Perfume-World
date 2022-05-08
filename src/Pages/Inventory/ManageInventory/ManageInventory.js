@@ -1,6 +1,8 @@
 import React,{ useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Table, Button } from 'react-bootstrap';
+import deleteIcon from '../../../images/delete.png';
+
 
 const ManageInventory = () => {
 
@@ -63,7 +65,7 @@ const ManageInventory = () => {
                     <td>{perfume.price}</td>
                     <td>{perfume.quantity}</td>
                     <td>{perfume.supplier}</td>
-                    <td><Button onClick={() => handlePerfumeDelete(perfume._id)}>X</Button></td>
+                    <td><Button onClick={() => handlePerfumeDelete(perfume._id)}><img src={deleteIcon} alt="Delete"></img></Button></td>
                 </tr>)}
   </tbody>
 </Table>

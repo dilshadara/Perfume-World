@@ -3,6 +3,7 @@ import { Table, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from "../../../firebase.init";
+import deleteIcon from '../../../images/delete.png';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
@@ -76,7 +77,7 @@ const MyItems = () => {
                            <td>{perfume.price}</td>
                            <td>{perfume.quantity}</td>
                            <td>{perfume.supplier}</td>
-                           <td><Button onClick={() => handlePerfumeDelete(perfume._id)}>X</Button></td>
+                           <td><Button onClick={() => handlePerfumeDelete(perfume._id)}><img src={deleteIcon} alt="Delete"></img></Button></td>
                        </tr>)}
                </tbody>
            </Table>

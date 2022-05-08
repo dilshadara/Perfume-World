@@ -57,13 +57,13 @@ const AddInventory = () => {
                     <Row className='mb-2'>
                         <Col style={{textAlign:'right'}}><Form.Label>Price</Form.Label></Col>
                         <Col>
-                            <Form.Control type="text" name="price" required />
+                            <Form.Control type="number" name="price" required />
                         </Col>
                     </Row>
                     <Row className='mb-2'>
                         <Col style={{textAlign:'right'}}><Form.Label>Quantity</Form.Label></Col>
                         <Col>
-                        <Form.Control type="text" name="quantity" required />
+                        <Form.Control type="number" name="quantity" required />
                         </Col>
                     </Row>
                     <Row className='mb-2'>
